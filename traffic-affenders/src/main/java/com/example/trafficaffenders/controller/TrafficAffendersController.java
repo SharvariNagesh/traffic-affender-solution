@@ -2,21 +2,19 @@ package com.example.trafficaffenders.controller;
 
 import com.example.trafficaffenders.bean.VehicleList;
 import com.example.trafficaffenders.model.VehicleDetails;
-import com.example.trafficaffenders.service.impl.GetTrafficAffenderServiceImpl;
+import com.example.trafficaffenders.service.GetTrafficAffenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collection;
 import java.util.List;
 
 @RestController
 public class TrafficAffendersController {
 
     @Autowired
-    private GetTrafficAffenderServiceImpl getTrafficAffenderService;
+    private GetTrafficAffenderService getTrafficAffenderService;
 
     @PostMapping("/vehicleList")
     @ResponseBody
