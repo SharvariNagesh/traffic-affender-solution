@@ -1,17 +1,16 @@
 package com.example.trafficaffenders.bean;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class VehicleList {
     String beakenId;
     String cameraId;
-    List<String> CarNos = new ArrayList<String>();
+    List<String> vehicleNos;
 
-    public VehicleList(String beakenId, String cameraId, List<String> carNos) {
+    public VehicleList(String beakenId, String cameraId, List<String> vehicleNos) {
         this.beakenId = beakenId;
         this.cameraId = cameraId;
-        this.CarNos = carNos;
+        this.vehicleNos = vehicleNos;
     }
 
     public VehicleList() {
@@ -33,12 +32,12 @@ public class VehicleList {
         this.cameraId = cameraId;
     }
 
-    public List<String> getCarNos() {
-        return CarNos;
+    public List<String> getVehicleNos() {
+        return vehicleNos;
     }
 
-    public void setCarNos(List<String> carNos) {
-        CarNos = carNos;
+    public void setVehicleNos(List<String> vehicleNos) {
+        this.vehicleNos = vehicleNos;
     }
 
     @Override
@@ -46,7 +45,7 @@ public class VehicleList {
         return "VehicleList{" +
                 "beakenId='" + beakenId + '\'' +
                 ", cameraId='" + cameraId + '\'' +
-                ", CarNos=" + CarNos +
+                ", vehicleNos=" + vehicleNos +
                 '}';
     }
 }

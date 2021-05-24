@@ -1,22 +1,23 @@
 package com.example.policenotification.policenotification.bean;
 
-import java.util.Date;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 
 public class NotificationDetails {
 
+    @NotNull
     private String beakenId;
     private String cameraId;
-    private List<String> listOfCars;
+    private List<String> listOfVehicles;
 
     public NotificationDetails() {
     }
 
-    public NotificationDetails(String beakenId, String cameraId, List<String> listOfCars) {
+    public NotificationDetails(String beakenId, String cameraId, List<String> listOfVehicles) {
         this.beakenId = beakenId;
         this.cameraId = cameraId;
-        this.listOfCars = listOfCars;
+        this.listOfVehicles = listOfVehicles;
     }
 
     public String getBeakenId() {
@@ -35,12 +36,12 @@ public class NotificationDetails {
         this.cameraId = cameraId;
     }
 
-    public List<String> getListOfCars() {
-        return listOfCars;
+    public List<String> getListOfVehicles() {
+        return listOfVehicles;
     }
 
-    public void setListOfCars(List<String> listOfCars) {
-        this.listOfCars = listOfCars;
+    public void setListOfVehicles(List<String> listOfVehicles) {
+        this.listOfVehicles = listOfVehicles;
     }
 
     @Override
@@ -48,7 +49,7 @@ public class NotificationDetails {
         return "NotificationDetails{" +
                 "beakenId='" + beakenId + '\'' +
                 ", cameraId='" + cameraId + '\'' +
-                ", listOfCars=" + listOfCars +
+                ", listOfVehicles=" + listOfVehicles +
                 '}';
     }
 }

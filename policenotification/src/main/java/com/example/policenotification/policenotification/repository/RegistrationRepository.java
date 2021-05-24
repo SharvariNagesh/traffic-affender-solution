@@ -9,4 +9,6 @@ public interface RegistrationRepository extends JpaRepository<RegistrationModel,
 
     public boolean existsByBeakenId(String beakenId);
 
+    public RegistrationModel getOneByBeakenId(String beakenId);
+
 }

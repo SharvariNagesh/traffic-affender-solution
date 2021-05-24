@@ -25,7 +25,7 @@ public class PoliceNotificationService {
             String vehicleInfo = vehicleDetail.getVehicleNo() +":"+vehicleDetail.getVehicleMake() +":"+vehicleDetail.getColor();
             vehicleDetailsForNotification.add(vehicleInfo);
         }
-        policeNotification.setListOfCars(vehicleDetailsForNotification);
+        policeNotification.setListOfVehicles(vehicleDetailsForNotification);
         String response = policeNotificationProxy.sendPoliceNotification(policeNotification);
         return response;
     }

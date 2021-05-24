@@ -6,7 +6,7 @@ import javax.validation.constraints.Pattern;
 public class RegistrationRequest {
     String beakenId;
 
-    @Pattern(regexp="(^[0-9]{10})", message ="Invalid Phone number")
+    @Pattern(regexp="(^[0-9]{10}$)", message ="Invalid Phone number. Please Enter 10 digit phone no")
     String phoneNo;
 
     public RegistrationRequest() {

@@ -17,7 +17,6 @@ public class RegistrationService {
     @Autowired
     private RegistrationRepository registrationRepositoryRepo;
 
-
     public RegistrationModel registerPolice(RegistrationRequest registrationRequest){
         if (registrationRepositoryRepo.existsByBeakenId(registrationRequest.getBeakenId())) {
             registrationRepositoryRepo.deleteByBeakenId(registrationRequest.getBeakenId());

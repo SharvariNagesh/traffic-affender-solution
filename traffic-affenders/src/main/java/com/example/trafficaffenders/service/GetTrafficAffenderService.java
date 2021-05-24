@@ -21,7 +21,7 @@ public class GetTrafficAffenderService {
     private PoliceNotificationService policeNotificationService;
 
     public List<VehicleDetails> getTrafficAffenders(VehicleList vehicleList){
-        Optional<List<VehicleDetails>> vehicleDetails =  getAffenders.findAllAffenders(vehicleList.getCarNos());
+        Optional<List<VehicleDetails>> vehicleDetails =  getAffenders.findAllAffenders(vehicleList.getVehicleNos());
 
         if (vehicleDetails.isPresent()){
             String notificationResponse =

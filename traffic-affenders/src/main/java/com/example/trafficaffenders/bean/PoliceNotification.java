@@ -5,15 +5,15 @@ import java.util.List;
 public class PoliceNotification {
     private String beakenId;
     private String cameraId;
-    private List<String> listOfCars;
+    private List<String> listOfVehicles;
 
     public PoliceNotification() {
     }
 
-    public PoliceNotification(String beakenId, String cameraId, List<String> listOfCars) {
+    public PoliceNotification(String beakenId, String cameraId, List<String> listOfVehicles) {
         this.beakenId = beakenId;
         this.cameraId = cameraId;
-        this.listOfCars = listOfCars;
+        this.listOfVehicles = listOfVehicles;
     }
 
     public String getBeakenId() {
@@ -33,11 +33,11 @@ public class PoliceNotification {
     }
 
     public List<String> getListOfCars() {
-        return listOfCars;
+        return listOfVehicles;
     }
 
-    public void setListOfCars(List<String> listOfCars) {
-        this.listOfCars = listOfCars;
+    public void setListOfVehicles(List<String> listOfCars) {
+        this.listOfVehicles = listOfCars;
     }
 
     @Override
@@ -45,7 +45,7 @@ public class PoliceNotification {
         return "NotificationDetails{" +
                 "beakenId='" + beakenId + '\'' +
                 ", cameraId='" + cameraId + '\'' +
-                ", listOfCars=" + listOfCars +
+                ", listOfVehicles=" + listOfVehicles +
                 '}';
     }
 }

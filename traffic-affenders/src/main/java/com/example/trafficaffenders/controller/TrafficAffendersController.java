@@ -5,6 +5,7 @@ import com.example.trafficaffenders.model.VehicleDetails;
 import com.example.trafficaffenders.service.GetTrafficAffenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,9 +19,9 @@ public class TrafficAffendersController {
 
     @PostMapping("/vehicleList")
     @ResponseBody
-    public List<VehicleDetails> searchAffenders(VehicleList vehicleList){
+    public List<VehicleDetails> searchAffenders(@RequestBody VehicleList vehicleList){
         System.out.println(vehicleList.toString());
-        for (String vehicle:vehicleList.getCarNos()) {
+        for (String vehicle:vehicleList.getVehicleNos()) {
             System.out.println(vehicle);
         }
         return getTrafficAffenderService.getTrafficAffenders(vehicleList);
