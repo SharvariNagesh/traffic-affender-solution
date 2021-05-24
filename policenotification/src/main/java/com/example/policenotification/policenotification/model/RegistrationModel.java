@@ -1,23 +1,27 @@
 package com.example.policenotification.policenotification.model;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 import javax.persistence.*;
 
 @Entity
 public class RegistrationModel {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
-    private String beanId;
+    private String beakenId;
     private String phoneNo;
 
-    public RegistrationModel(long id, String beanId, String phoneNo) {
+    public RegistrationModel(long id, String beakenId, String phoneNo) {
         this.id = id;
-        this.beanId = beanId;
+        this.beakenId = beakenId;
         this.phoneNo = phoneNo;
     }
 
     public RegistrationModel() {
+    }
+
+    public RegistrationModel(String beakenId, String phoneNo) {
+        this.beakenId = beakenId;
+        this.phoneNo = phoneNo;
     }
 
     public long getId() {
@@ -28,12 +32,12 @@ public class RegistrationModel {
         this.id = id;
     }
 
-    public String getBeanId() {
-        return beanId;
+    public String getBeakenId() {
+        return beakenId;
     }
 
-    public void setBeanId(String beanId) {
-        this.beanId = beanId;
+    public void setBeakenId(String beakenId) {
+        this.beakenId = beakenId;
     }
 
     public String getPhoneNo() {
@@ -48,7 +52,7 @@ public class RegistrationModel {
     public String toString() {
         return "RegistrationModel{" +
                 "id=" + id +
-                ", beanId='" + beanId + '\'' +
+                ", beanId='" + beakenId + '\'' +
                 ", phoneNo='" + phoneNo + '\'' +
                 '}';
     }
