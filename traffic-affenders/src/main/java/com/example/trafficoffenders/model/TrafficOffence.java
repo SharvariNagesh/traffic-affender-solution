@@ -1,4 +1,4 @@
-package com.example.trafficaffenders.model;
+package com.example.trafficoffenders.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -6,8 +6,8 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "Traffic_Affence")
-public class TrafficAffence {
+@Table(name = "Traffic_Offence")
+public class TrafficOffence {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
@@ -21,18 +21,11 @@ public class TrafficAffence {
     @ManyToOne
     private VehicleDetails vehicleDetails;
 
-    public TrafficAffence(long id, VehicleDetails vehicleDetails, String violationCode, String violationComment, Date violationDate, int penaltyAmount, String violationPlace) {
+    public TrafficOffence() {
+    }
+    public TrafficOffence(long id, VehicleDetails vehicleDetails, String violationCode, String violationComment, Date violationDate, int penaltyAmount, String violationPlace) {
         this.id = id;
         this.vehicleDetails = vehicleDetails;
-        this.violationCode = violationCode;
-        this.violationComment = violationComment;
-        this.violationDate = violationDate;
-        this.penaltyAmount = penaltyAmount;
-        this.violationPlace = violationPlace;
-    }
-
-    public TrafficAffence(String vehicleNo, String violationCode, String violationComment, Date violationDate, int penaltyAmount, String violationPlace) {
-    //    this.vehicleNo = vehicleNo;
         this.violationCode = violationCode;
         this.violationComment = violationComment;
         this.violationDate = violationDate;
@@ -48,9 +41,6 @@ public class TrafficAffence {
         this.vehicleDetails = vehicleDetails;
     }
 
-    public TrafficAffence() {
-    }
-
     public long getId() {
         return id;
     }
@@ -58,14 +48,6 @@ public class TrafficAffence {
     public void setId(long id) {
         this.id = id;
     }
-
-//    public String getVehicleNo() {
-//        return vehicleNo;
-//    }
-//
-//    public void setVehicleNo(String vehicleNo) {
-//        this.vehicleNo = vehicleNo;
-//    }
 
     public String getViolationCode() {
         return violationCode;
@@ -109,7 +91,7 @@ public class TrafficAffence {
 
     @Override
     public String toString() {
-        return "TrafficAffence{" +
+        return "TrafficOffence{" +
                 "id=" + id +
                 ", violationCode='" + violationCode + '\'' +
                 ", violationComment='" + violationComment + '\'' +

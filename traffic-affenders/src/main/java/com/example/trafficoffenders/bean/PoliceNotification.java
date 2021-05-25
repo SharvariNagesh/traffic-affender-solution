@@ -1,6 +1,4 @@
-package com.example.trafficaffenders.bean;
-
-import java.util.List;
+package com.example.trafficoffenders.bean;
 
 public class PoliceNotification {
     private String beakenId;

@@ -1,9 +1,9 @@
-package com.example.trafficaffenders.service;
+package com.example.trafficoffenders.service;
 
-import com.example.trafficaffenders.bean.VehicleList;
-import com.example.trafficaffenders.model.VehicleDetails;
-import com.example.trafficaffenders.repository.GetAffendersRepo;
-//import com.example.trafficaffenders.service.GetTrafficAffenderService;
+import com.example.trafficoffenders.bean.VehicleList;
+import com.example.trafficoffenders.model.VehicleDetails;
+import com.example.trafficoffenders.repository.GetOffendersRepo;
+//import com.example.trafficaffenders.service.GetTrafficOffenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,16 +12,16 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class GetTrafficAffenderService {
+public class GetTrafficOffenderService {
 
     @Autowired
-    private GetAffendersRepo getAffendersRepo;
+    private GetOffendersRepo getOffendersRepo;
 
     @Autowired
     private PoliceNotificationService policeNotificationService;
 
-    public List<VehicleDetails> getTrafficAffenders(VehicleList vehicleList){
-        Optional<List<VehicleDetails>> vehicleDetails =  getAffendersRepo.findAllAffenders(vehicleList.getVehicleNos());
+    public List<VehicleDetails> getTrafficOffenders(VehicleList vehicleList){
+        Optional<List<VehicleDetails>> vehicleDetails =  getOffendersRepo.findAllOffenders(vehicleList.getVehicleNos());
 
         if (vehicleDetails.isPresent()){
             String notificationResponse =

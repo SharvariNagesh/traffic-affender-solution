@@ -1,4 +1,4 @@
-package com.example.trafficaffenders.bean;
+package com.example.trafficoffenders.bean;
 
 import java.util.List;
 

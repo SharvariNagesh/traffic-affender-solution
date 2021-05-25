@@ -1,4 +1,4 @@
-package com.example.trafficaffenders;
+package com.example.trafficoffenders;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

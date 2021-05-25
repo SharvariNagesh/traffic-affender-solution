@@ -1,14 +1,13 @@
-package com.example.trafficaffenders.service;
+package com.example.trafficoffenders.service;
 
-import com.example.trafficaffenders.bean.PoliceNotification;
-import com.example.trafficaffenders.bean.VehicleList;
-import com.example.trafficaffenders.model.TrafficAffence;
-import com.example.trafficaffenders.model.VehicleDetails;
-import com.example.trafficaffenders.proxy.PoliceNotificationProxy;
+import com.example.trafficoffenders.bean.PoliceNotification;
+import com.example.trafficoffenders.bean.VehicleList;
+import com.example.trafficoffenders.model.TrafficOffence;
+import com.example.trafficoffenders.model.VehicleDetails;
+import com.example.trafficoffenders.proxy.PoliceNotificationProxy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -30,10 +29,10 @@ public class PoliceNotificationService {
                         + ":" + vehicleDetail.getColor()
                         + "(";
 
-                for (TrafficAffence trafficAffence : vehicleDetail.getTrafficAffences()) {
-                    vehicleInfo = vehicleInfo + trafficAffence.getViolationComment()
-                            + " ON: " + trafficAffence.getViolationDate()
-                            + " Fine: " + trafficAffence.getPenaltyAmount();
+                for (TrafficOffence trafficOffence : vehicleDetail.getTrafficOffences()) {
+                    vehicleInfo = vehicleInfo + trafficOffence.getViolationComment()
+                            + " ON: " + trafficOffence.getViolationDate()
+                            + " Fine: " + trafficOffence.getPenaltyAmount();
                 }
                 vehicleInfo = vehicleInfo + ")";
                 if (vehicleInfo.length() >= SMS_LEN) {

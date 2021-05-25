@@ -1,4 +1,4 @@
-package com.example.trafficaffenders.model;
+package com.example.trafficoffenders.model;
 
 
 import javax.persistence.*;
@@ -20,15 +20,15 @@ public class VehicleDetails {
     private String vehicleMake;
 
     @OneToMany(mappedBy = "vehicleDetails")
-    private List<TrafficAffence> trafficAffences= new ArrayList<>();
+    private List<TrafficOffence> trafficOffences = new ArrayList<>();
 
-    public VehicleDetails(String vehicleNo, String ownerName, Date purchaseDate, String color, String vehicleMake, List<TrafficAffence> trafficAffences) {
+    public VehicleDetails(String vehicleNo, String ownerName, Date purchaseDate, String color, String vehicleMake, List<TrafficOffence> trafficOffences) {
         this.vehicleNo = vehicleNo;
         this.ownerName = ownerName;
         this.purchaseDate = purchaseDate;
         this.color = color;
         this.vehicleMake = vehicleMake;
-        this.trafficAffences = trafficAffences;
+        this.trafficOffences = trafficOffences;
     }
 
     public VehicleDetails() {
@@ -82,12 +82,12 @@ public class VehicleDetails {
         this.vehicleMake = vehicleMake;
     }
 
-    public List<TrafficAffence> getTrafficAffences() {
-        return trafficAffences;
+    public List<TrafficOffence> getTrafficOffences() {
+        return trafficOffences;
     }
 
-    public void setTrafficAffences(List<TrafficAffence> trafficAffences) {
-        this.trafficAffences = trafficAffences;
+    public void setTrafficAffences(List<TrafficOffence> trafficOffences) {
+        this.trafficOffences = trafficOffences;
     }
 
     @Override
@@ -99,7 +99,7 @@ public class VehicleDetails {
                 ", purchaseDate=" + purchaseDate +
                 ", color='" + color + '\'' +
                 ", vehicleMake='" + vehicleMake + '\'' +
-                ", trafficAffences=" + trafficAffences +
+                ", trafficOffences=" + trafficOffences +
                 '}';
     }
 }

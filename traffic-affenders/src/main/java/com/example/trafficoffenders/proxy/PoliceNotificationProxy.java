@@ -1,10 +1,9 @@
-package com.example.trafficaffenders.proxy;
+package com.example.trafficoffenders.proxy;
 
-import com.example.trafficaffenders.bean.PoliceNotification;
+import com.example.trafficoffenders.bean.PoliceNotification;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 @FeignClient(name="police-notification",url="localhost:8081")
 public interface PoliceNotificationProxy {
