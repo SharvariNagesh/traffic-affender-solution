@@ -111,7 +111,6 @@ public class TrafficAffence {
     public String toString() {
         return "TrafficAffence{" +
                 "id=" + id +
-                ", vehicleDetails=" + vehicleDetails +
                 ", violationCode='" + violationCode + '\'' +
                 ", violationComment='" + violationComment + '\'' +
                 ", violationDate=" + violationDate +
