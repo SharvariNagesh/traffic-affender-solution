@@ -21,9 +21,6 @@ public class TrafficAffendersController {
     @ResponseBody
     public List<VehicleDetails> searchAffenders(@RequestBody VehicleList vehicleList){
         System.out.println(vehicleList.toString());
-        for (String vehicle:vehicleList.getVehicleNos()) {
-            System.out.println(vehicle);
-        }
         return getTrafficAffenderService.getTrafficAffenders(vehicleList);
     }
 }

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @FeignClient(name="police-notification",url="localhost:8081")
 public interface PoliceNotificationProxy {
-    
+
     @PostMapping(value = "/police-notify", consumes = "application/json")
     public String sendPoliceNotification(@RequestBody PoliceNotification policeNotification);
 }

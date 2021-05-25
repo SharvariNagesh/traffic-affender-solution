@@ -19,7 +19,7 @@ public class NotificationService {
         RegistrationModel registrationModel = registrationRepository.getOneByBeakenId(notificationDetails.getBeakenId());
         if(registrationModel == null){
             System.out.println("Beaken Not registere!");
-            return"Failed to send Notification : Beaken not found";
+            return  "Failed to send Notification : Beaken not found";
         }
         System.out.println(notificationDetails.toString());
         if(notificationDetails.getMessageTobeSent() != null) {

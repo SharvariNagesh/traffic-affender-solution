@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-public interface GetAffenders extends JpaRepository<VehicleDetails,Integer> {
+public interface GetAffendersRepo extends JpaRepository<VehicleDetails,Integer> {
 
     @Query(
             value = "SELECT * FROM VEHICLE_DETAILS  inner join TRAFFIC_AFFENCE"

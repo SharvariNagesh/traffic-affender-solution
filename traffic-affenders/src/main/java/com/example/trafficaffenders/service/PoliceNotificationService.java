@@ -20,29 +20,39 @@ public class PoliceNotificationService {
     private static final int SMS_LEN = 140;
 
     public String sendPoliceNotification(List<VehicleDetails> vehicleDetails, VehicleList vehicleList){
-        for (VehicleDetails vehicleDetail :vehicleDetails) {
-            PoliceNotification policeNotification = new PoliceNotification();
-            policeNotification.setBeakenId(vehicleList.getBeakenId());
-            String vehicleInfo = "CameraId:" + vehicleList.getCameraId()
-                    + "; " + vehicleDetail.getVehicleNo()
-                    +":"+vehicleDetail.getVehicleMake()
-                    +":"+vehicleDetail.getColor()
-                    +"(";
+        try {
+            for (VehicleDetails vehicleDetail : vehicleDetails) {
+                PoliceNotification policeNotification = new PoliceNotification();
+                policeNotification.setBeakenId(vehicleList.getBeakenId());
+                String vehicleInfo = "CameraId:" + vehicleList.getCameraId()
+                        + "; " + vehicleDetail.getVehicleNo()
+                        + ":" + vehicleDetail.getVehicleMake()
+                        + ":" + vehicleDetail.getColor()
+                        + "(";
 
-            for (TrafficAffence trafficAffence: vehicleDetail.getTrafficAffences()) {
-                vehicleInfo = vehicleInfo + trafficAffence.getViolationComment()
-                        +" ON: " + trafficAffence.getViolationDate()
-                        + " Fine: " + trafficAffence.getPenaltyAmount();
+                for (TrafficAffence trafficAffence : vehicleDetail.getTrafficAffences()) {
+                    vehicleInfo = vehicleInfo + trafficAffence.getViolationComment()
+                            + " ON: " + trafficAffence.getViolationDate()
+                            + " Fine: " + trafficAffence.getPenaltyAmount();
+                }
+                vehicleInfo = vehicleInfo + ")";
+                if (vehicleInfo.length() >= SMS_LEN) {
+                    System.out.println("SMS Length longer than " + SMS_LEN + " removing excess lines");
+                    vehicleInfo = vehicleInfo.substring(0, 139);
+                    System.out.println("SMS Length After cropping " + vehicleInfo);
+
+                }
+                policeNotification.setMessageTobeSent(vehicleInfo);
+                System.out.println(policeNotification.toString());
+                String response = policeNotificationProxy.sendPoliceNotification(policeNotification);
+                System.out.println("Response from Notification microservice:" + response);
+                return response;
+
             }
-            vehicleInfo= vehicleInfo + ")";
-            if(vehicleInfo.length()>=SMS_LEN ){
-                vehicleInfo = vehicleInfo.substring(0,139);
-            }
-            policeNotification.setMessageTobeSent(vehicleInfo);
-            System.out.println(policeNotification.toString());
-            String response = policeNotificationProxy.sendPoliceNotification(policeNotification);
+        }catch (Exception e){
+            System.out.println("Sending message failed!: "+ e.getMessage());
+            return "Sending message failed!: "+ e.getMessage();
         }
-
 
         return "success";
     }

@@ -1,0 +1,111 @@
+{
+	"info": {
+		"_postman_id": "97d6ae5c-f3b3-403f-993c-258ef035d37d",
+		"name": "Traffic-Affenders-police-notification microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Police Notification",
+			"item": [
+				{
+					"name": "Notification Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"beakenId\": \"abc2\",\n\t\"messageTobeSent\": \"Black WagonR-KA18-E67\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/police-notify?beakenId=abc2&messageTobeSent=CameraId:xyz1; abc:WagonR:black(Signal light violation ON: 2020-12-01 00:00:00.0 Fine: 500)",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"police-notify"
+							],
+							"query": [
+								{
+									"key": "beakenId",
+									"value": "abc2"
+								},
+								{
+									"key": "messageTobeSent",
+									"value": "CameraId:xyz1; abc:WagonR:black(Signal light violation ON: 2020-12-01 00:00:00.0 Fine: 500)"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registration Request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"beakenId\": \"abc2\",\n    \"phoneNo\": \"8197207702\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/police-register",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"police-register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TrafficAffenderAlert",
+			"item": [
+				{
+					"name": "sendVehicleRequest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"beakenId\": \"abc2\",\n\t\"cameraId\": \"xyz1\",\n\t\"vehicleNos\": [\"KA18C23\", \"KL01B874\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/vehicleList",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicleList"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

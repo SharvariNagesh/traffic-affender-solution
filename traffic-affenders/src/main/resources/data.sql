@@ -1,13 +1,18 @@
-
-insert into Vehicle_Details (id,vehicle_no, owner_name, purchase_date,color,vehicle_make) values(2,'bcd','Nagesh',TO_DATE('01-06-2017','dd-MM-yyyy'),'black','WagonR');
-insert into Vehicle_Details (id,vehicle_no, owner_name, purchase_date,color,vehicle_make) values(3,'cde','Hemanth',TO_DATE('10-2-2010','dd-MM-yyyy'),'black','WagonR');
-insert into Vehicle_Details (id,vehicle_no, owner_name, purchase_date,color,vehicle_make) values(1,'abc','sharvari',TO_DATE('01-12-2019','dd-MM-yyyy'),'black','WagonR');
-insert into Traffic_Affence (id, violation_code, violation_comment,violation_date,penalty_amount,violation_place,vehicle_details_id) values(1,'123','Signal light violation',TO_DATE('01-12-2020','dd-MM-yyyy'),500,'Bangalore',1);
-insert into Traffic_Affence (id, violation_code, violation_comment,violation_date,penalty_amount,violation_place,vehicle_details_id) values(2,'123','Signal light violation',TO_DATE('01-12-2020','dd-MM-yyyy'),500,'Bangalore',2);
-
-
---  insert into Weathermusic  (id, weather, music) values(2,'cold','classic');
---  insert into Weathermusic  (id, weather, music) values(3,'cloudy','sad');
---    insert into Weathermusic  (id, weather, music) values(4,'hot','pop');
---    insert into Weathermusic  (id, weather, music) values(5,'cold','classic');
---    insert into Weathermusic  (id, weather, music) values(6,'cloudy','sad');
+insert into Vehicle_Details (id,vehicle_no, owner_name, purchase_date,color,vehicle_make) values(1,'KA18C23','sharvari',TO_DATE('01-12-2019','dd-MM-yyyy'),'Red','Honda Civic');
+insert into Vehicle_Details (id,vehicle_no, owner_name, purchase_date,color,vehicle_make) values(2,'KA05E183','Nagesh',TO_DATE('01-06-2017','dd-MM-yyyy'),'black','WagonR');
+insert into Vehicle_Details (id,vehicle_no, owner_name, purchase_date,color,vehicle_make) values(3,'KL01B874','Hemanth',TO_DATE('10-2-2010','dd-MM-yyyy'),'Blue','Renault');
+insert into Vehicle_Details (id,vehicle_no, owner_name, purchase_date,color,vehicle_make) values(4,'AP01B874','Gurur',TO_DATE('14-11-2000','dd-MM-yyyy'),'Silver','i20');
+insert into Vehicle_Details (id,vehicle_no, owner_name, purchase_date,color,vehicle_make) values(5,'KL01B874','Hemanth',TO_DATE('10-2-2010','dd-MM-yyyy'),'Brown','Renault');
+insert into Vehicle_Details (id,vehicle_no, owner_name, purchase_date,color,vehicle_make) values(6,'DL01F431','Hemanth',TO_DATE('10-2-2010','dd-MM-yyyy'),'Orange','Renault');
+insert into Vehicle_Details (id,vehicle_no, owner_name, purchase_date,color,vehicle_make) values(7,'KA03B481','Hemanth',TO_DATE('10-2-2010','dd-MM-yyyy'),'Blue','Renault');
+insert into Vehicle_Details (id,vehicle_no, owner_name, purchase_date,color,vehicle_make) values(8,'KA08G794','Hemanth',TO_DATE('10-2-2010','dd-MM-yyyy'),'White','Renault');
+insert into Vehicle_Details (id,vehicle_no, owner_name, purchase_date,color,vehicle_make) values(9,'KA19K74','Hemanth',TO_DATE('10-2-2010','dd-MM-yyyy'),'Yellow','Renault');
+insert into Vehicle_Details (id,vehicle_no, owner_name, purchase_date,color,vehicle_make) values(10,'KA10F714','Hemanth',TO_DATE('10-2-2010','dd-MM-yyyy'),'light Blue','Renault');
+insert into Traffic_Affence (id, violation_code, violation_comment,violation_date,penalty_amount,violation_place,vehicle_details_id) values(1,'123','Signal light violation',TO_DATE('01-12-2020','dd-MM-yyyy'),500,'Delhi',1);
+insert into Traffic_Affence (id, violation_code, violation_comment,violation_date,penalty_amount,violation_place,vehicle_details_id) values(2,'124','Hit And Run',TO_DATE('01-10-2019','dd-MM-yyyy'),1500,'Bangalore',2);
+insert into Traffic_Affence (id, violation_code, violation_comment,violation_date,penalty_amount,violation_place,vehicle_details_id) values(3,'125','Rash driving',TO_DATE('12-09-2016','dd-MM-yyyy'),1000,'Bangalore',4);
+insert into Traffic_Affence (id, violation_code, violation_comment,violation_date,penalty_amount,violation_place,vehicle_details_id) values(4,'111','Wrong parking',TO_DATE('12-04-2016','dd-MM-yyyy'),1000,'Bangalore',4);
+insert into Traffic_Affence (id, violation_code, violation_comment,violation_date,penalty_amount,violation_place,vehicle_details_id) values(5,'125','Rash driving',TO_DATE('12-09-2015','dd-MM-yyyy'),2000,'Bangalore',4);
+insert into Traffic_Affence (id, violation_code, violation_comment,violation_date,penalty_amount,violation_place,vehicle_details_id) values(6,'125','Rash driving',TO_DATE('12-09-2019','dd-MM-yyyy'),1000,'Bangalore',4);
+insert into Traffic_Affence (id, violation_code, violation_comment,violation_date,penalty_amount,violation_place,vehicle_details_id) values(7,'125','Rash driving',TO_DATE('12-02-2021','dd-MM-yyyy'),1000,'Bangalore',4);
+insert into Traffic_Affence (id, violation_code, violation_comment,violation_date,penalty_amount,violation_place,vehicle_details_id) values(8,'125','Rash driving',TO_DATE('12-09-2016','dd-MM-yyyy'),1000,'Bangalore',4);
