@@ -11,8 +11,8 @@
 	<groupId>com.example</groupId>
 	<artifactId>traffic-affenders</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>traffic-affenders</name>
-	<description>an application to catch traffic affenders</description>
+	<name>traffic-offenders</name>
+	<description>an application to catch traffic offenders</description>
 	<properties>
 		<java.version>11</java.version>
 		<spring-cloud.version>2020.0.2</spring-cloud.version>
