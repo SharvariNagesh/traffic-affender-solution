@@ -22,8 +22,13 @@ public class NotificationService {
             return"Failed to send Notification : Beaken not found";
         }
         System.out.println(notificationDetails.toString());
-        for (String vehicleMessage:notificationDetails.getListOfVehicles()) {
-            twilioNotificationService.sendSNSNotification(registrationModel.getPhoneNo(), vehicleMessage);
+        if(notificationDetails.getMessageTobeSent() != null) {
+            System.out.println("Message to be sent:" + notificationDetails.getMessageTobeSent());
+            twilioNotificationService.sendSNSNotification(registrationModel.getPhoneNo(), notificationDetails.getMessageTobeSent());
+        }else{
+            String errMessage= "Messagesare empty!. Message Could not be sent";
+            System.out.println(errMessage);
+            return errMessage;
         }
         return "Success";
     }

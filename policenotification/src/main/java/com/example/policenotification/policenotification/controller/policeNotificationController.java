@@ -16,7 +16,7 @@ public class policeNotificationController {
     private NotificationService notificationService;
 
     @PostMapping(value = "/police-notify", consumes = "application/json")
-    public String searchAffenders(@RequestBody NotificationDetails notificationDetails){
+    public String sendNotification(@RequestBody NotificationDetails notificationDetails){
         System.out.println("Notification  details:" + notificationDetails.toString());
         return notificationService.sendNotification(notificationDetails);
 

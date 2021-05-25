@@ -4,16 +4,15 @@ import java.util.List;
 
 public class PoliceNotification {
     private String beakenId;
-    private String cameraId;
-    private List<String> listOfVehicles;
+    private String messageTobeSent;
+
 
     public PoliceNotification() {
     }
 
-    public PoliceNotification(String beakenId, String cameraId, List<String> listOfVehicles) {
+    public PoliceNotification(String beakenId, String messageTobeSent) {
         this.beakenId = beakenId;
-        this.cameraId = cameraId;
-        this.listOfVehicles = listOfVehicles;
+        this.messageTobeSent = messageTobeSent;
     }
 
     public String getBeakenId() {
@@ -24,28 +23,19 @@ public class PoliceNotification {
         this.beakenId = beakenId;
     }
 
-    public String getCameraId() {
-        return cameraId;
+    public String getMessageTobeSent() {
+        return messageTobeSent;
     }
 
-    public void setCameraId(String cameraId) {
-        this.cameraId = cameraId;
-    }
-
-    public List<String> getListOfCars() {
-        return listOfVehicles;
-    }
-
-    public void setListOfVehicles(List<String> listOfCars) {
-        this.listOfVehicles = listOfCars;
+    public void setMessageTobeSent(String messageTobeSent) {
+        this.messageTobeSent = messageTobeSent;
     }
 
     @Override
     public String toString() {
         return "NotificationDetails{" +
                 "beakenId='" + beakenId + '\'' +
-                ", cameraId='" + cameraId + '\'' +
-                ", listOfVehicles=" + listOfVehicles +
+                ", messageTobeSent=" + messageTobeSent +
                 '}';
     }
 }

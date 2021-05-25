@@ -1,23 +1,22 @@
 package com.example.policenotification.policenotification.bean;
 
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 
 public class NotificationDetails {
 
     @NotNull
     private String beakenId;
-    private String cameraId;
-    private List<String> listOfVehicles;
+    private String messageTobeSent;
+
 
     public NotificationDetails() {
     }
 
-    public NotificationDetails(String beakenId, String cameraId, List<String> listOfVehicles) {
+    public NotificationDetails(String beakenId, String cameraId, String messageTobeSent) {
         this.beakenId = beakenId;
-        this.cameraId = cameraId;
-        this.listOfVehicles = listOfVehicles;
+        this.messageTobeSent = messageTobeSent;
+
     }
 
     public String getBeakenId() {
@@ -28,28 +27,19 @@ public class NotificationDetails {
         this.beakenId = beakenId;
     }
 
-    public String getCameraId() {
-        return cameraId;
+    public String getMessageTobeSent() {
+        return messageTobeSent;
     }
 
-    public void setCameraId(String cameraId) {
-        this.cameraId = cameraId;
-    }
-
-    public List<String> getListOfVehicles() {
-        return listOfVehicles;
-    }
-
-    public void setListOfVehicles(List<String> listOfVehicles) {
-        this.listOfVehicles = listOfVehicles;
+    public void setMessageTobeSent(String messageTobeSent) {
+        this.messageTobeSent = messageTobeSent;
     }
 
     @Override
     public String toString() {
         return "NotificationDetails{" +
                 "beakenId='" + beakenId + '\'' +
-                ", cameraId='" + cameraId + '\'' +
-                ", listOfVehicles=" + listOfVehicles +
+                ", MessageTobeSent=" + messageTobeSent +
                 '}';
     }
 }
